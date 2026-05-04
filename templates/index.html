@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Inteligente</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, rgb(41, 15, 66), rgb(80, 30, 120), rgb(41, 15, 66));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;         
+        }
+        #chatbot{
+            height: 600px;
+            background: white;
+            /* background: linear-gradient(135deg, rgb(127, 245, 24), rgb(80, 200, 50), rgb(40, 160, 80)); */
+            width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;   
+        }
+        /* Título */
+        #chatbot h2{
+            margin: 0;
+            padding: 18px;
+            text-align: center;
+            background: linear-gradient(90deg, #20df2d, #aadd13);
+            color: rgb(45, 36, 171);
+            font-size: 24px;
+        }
+        /* Zona de mensajes */
+        #messages{
+            flex-grow: 1;
+            overflow-y: auto;
+            margin-bottom: 15px;
+            background: #f5f7fa;
+        }
+        .msg{margin: 8px 0;}
+        .user{text-align: right; color: rgb(166, 198, 188);}
+        .bot{text-align: left;color: green;}
+        input[type="text"]{
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            outline: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="chatbot">
+        <h2>🤖 Chatbot</h2>
+        <div id="messages"></div>
+        <form  id="chatForm">
+           <input type="text" id="userInput" placeholder="Escribe tu mensaje..."
+           autocomplete="off"/>
+        </form>
+    </div>
+    <script>
+        const form = document.getElementById("chatForm");
+        const input = document.getElementById("userInput");
+        const messages = document.getElementById("messages");
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const text = input.value.trim();
+            if(!text) return;
+            messages.innerHTML +=  `<div class="msg user">Tú: ${text}</div>`;
+            input.value="";
+        const response = await fetch("/chat",{
+            method:"POST",
+            headers: {"Content-Type": "application/x-www-form-urlencoded"},
+            body:`message=${encodeURIComponent(text)}`
+        });
+        const data = await response.json();
+        messages.innerHTML += `<div class="msg bot">Bot: ${data.response}</div>`;
+        messages.scrollTop = messages.scrollHeight;
+        });
+    </script>
+</body>
+</html>
