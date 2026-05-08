@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+{% block title %}Gastos — AdminAgro{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+  <h1>💰 Control de Gastos y Finanzas</h1>
+  <p>Registra costos, analiza rentabilidad y toma decisiones financieras informadas en tu finca.</p>
+</div>
+
+<div class="page-content">
+
+  <h2 style="margin-bottom:8px">Categorías de gastos en la finca</h2>
+  <p class="section-subtitle">Clasificar los gastos te permite identificar dónde optimizar costos.</p>
+
+  <div class="info-grid">
+    <div class="info-block">
+      <h3>👷 Mano de obra</h3>
+      <ul>
+        <li>Jornales diarios (fijos y temporales)</li>
+        <li>Prestaciones sociales si hay contrato</li>
+        <li>Bonificaciones por cosecha</li>
+        <li>Representa el 30–40% del costo total</li>
+        <li>Registrar: nombre, fecha, actividad, valor</li>
+      </ul>
+    </div>
+    <div class="info-block">
+      <h3>🌿 Insumos agrícolas</h3>
+      <ul>
+        <li>Semillas y material de propagación</li>
+        <li>Fertilizantes y enmiendas</li>
+        <li>Herbicidas, fungicidas e insecticidas</li>
+        <li>Representa el 25–35% del costo total</li>
+        <li>Comparar precios entre proveedores</li>
+      </ul>
+    </div>
+    <div class="info-block">
+      <h3>🐄 Insumos pecuarios</h3>
+      <ul>
+        <li>Alimento concentrado para animales</li>
+        <li>Vacunas y medicamentos veterinarios</li>
+        <li>Minerales y suplementos</li>
+        <li>Honorarios veterinario</li>
+        <li>Registrar por especie o grupo animal</li>
+      </ul>
+    </div>
+    <div class="info-block">
+      <h3>🚛 Transporte y logística</h3>
+      <ul>
+        <li>Flete de insumos y cosecha</li>
+        <li>Combustible de vehículo propio</li>
+        <li>Arrendamiento de maquinaria</li>
+        <li>Empaques y materiales de poscosecha</li>
+        <li>Registrar por viaje o actividad</li>
+      </ul>
+    </div>
+    <div class="info-block">
+      <h3>🔧 Mantenimiento</h3>
+      <ul>
+        <li>Reparación de equipos y maquinaria</li>
+        <li>Mantenimiento de cercas y corrales</li>
+        <li>Reparación de sistemas de riego</li>
+        <li>Materiales de construcción</li>
+        <li>Depreciación de activos fijos</li>
+      </ul>
+    </div>
+    <div class="info-block">
+      <h3>🏦 Costos financieros</h3>
+      <ul>
+        <li>Intereses de crédito agropecuario</li>
+        <li>Seguros de cosecha o pecuarios</li>
+        <li>Arriendo del predio si aplica</li>
+        <li>Servicios públicos (agua, energía)</li>
+        <li>Impuesto predial y otros gravámenes</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- REGISTRO DE GASTOS -->
+  <h2 style="margin: 40px 0 8px">Formato de registro de gastos</h2>
+  <p class="section-subtitle">Ejemplo de cómo llevar el libro de gastos mensual.</p>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Categoría</th>
+          <th>Descripción</th>
+          <th>Cantidad</th>
+          <th>Valor unitario</th>
+          <th>Total</th>
+          <th>Responsable</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>02/06/2025</td><td>Insumos agrícolas</td><td>Urea 46%</td><td>100 kg</td><td>$2.200</td><td>$220.000</td><td>Juan</td></tr>
+        <tr><td>03/06/2025</td><td>Mano de obra</td><td>Jornal preparación suelo</td><td>3 días</td><td>$50.000</td><td>$150.000</td><td>Pedro</td></tr>
+        <tr><td>05/06/2025</td><td>Insumos pecuarios</td><td>Ivermectina 1%</td><td>500 mL</td><td>$35</td><td>$17.500</td><td>Juan</td></tr>
+        <tr><td>10/06/2025</td><td>Transporte</td><td>Flete insumos</td><td>1 viaje</td><td>$80.000</td><td>$80.000</td><td>Juan</td></tr>
+        <tr><td>15/06/2025</td><td>Mantenimiento</td><td>Reparación bomba riego</td><td>1</td><td>$120.000</td><td>$120.000</td><td>Pedro</td></tr>
+        <tr style="background:#f0f7f4; font-weight:700"><td colspan="5">Total del período</td><td>$587.500</td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ANÁLISIS DE RENTABILIDAD -->
+  <h2 style="margin: 40px 0 8px">Análisis básico de rentabilidad</h2>
+  <p class="section-subtitle">Fórmulas clave para evaluar si la actividad genera ganancia.</p>
+
+  <div class="info-grid">
+    <div class="info-block">
+      <h3>📊 Utilidad bruta</h3>
+      <p><strong>Ingresos totales − Costos totales = Utilidad</strong></p>
+      <p style="margin-top:10px">Si el resultado es positivo hay ganancia. Si es negativo, la actividad está generando pérdida y se debe revisar costos o precios de venta.</p>
+    </div>
+    <div class="info-block">
+      <h3>📈 Rentabilidad (%)</h3>
+      <p><strong>(Utilidad ÷ Costos totales) × 100</strong></p>
+      <p style="margin-top:10px">Una rentabilidad del 15–25% se considera saludable para actividades agropecuarias. Por encima del 25% es excelente. Por debajo del 10%, revisar.</p>
+    </div>
+    <div class="info-block">
+      <h3>⚖️ Punto de equilibrio</h3>
+      <p><strong>Costos fijos ÷ (Precio − Costo variable unitario)</strong></p>
+      <p style="margin-top:10px">Es la producción mínima para no perder. Producir por encima del punto de equilibrio genera ganancia. Úsalo para fijar metas de producción.</p>
+    </div>
+    <div class="info-block">
+      <h3>🥛 Costo por unidad producida</h3>
+      <p><strong>Costo total ÷ Unidades producidas</strong></p>
+      <p style="margin-top:10px">Ejemplo: si gastas $3.000.000 al mes y produces 6.000 litros de leche, tu costo es $500/litro. Si vendes a $800, tu margen es $300/litro.</p>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <p>💡 <strong>Consejo:</strong> Registra <strong>todos</strong> los gastos, incluso los pequeños. Los costos ocultos (transporte propio, mano de obra familiar, depreciación) son los que más afectan la rentabilidad real sin que te des cuenta. Consulta a AgriBot sobre cómo calcular la rentabilidad de una actividad específica de tu finca.</p>
+  </div>
+
+</div>
+{% endblock %}

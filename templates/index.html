@@ -1,89 +1,98 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot Inteligente</title>
-    <style>
-        body{
-            margin: 0;
-            padding: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: linear-gradient(135deg, rgb(41, 15, 66), rgb(80, 30, 120), rgb(41, 15, 66));
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;         
-        }
-        #chatbot{
-            height: 600px;
-            background: white;
-            /* background: linear-gradient(135deg, rgb(127, 245, 24), rgb(80, 200, 50), rgb(40, 160, 80)); */
-            width: 400px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;   
-        }
-        /* Título */
-        #chatbot h2{
-            margin: 0;
-            padding: 18px;
-            text-align: center;
-            background: linear-gradient(90deg, #20df2d, #aadd13);
-            color: rgb(45, 36, 171);
-            font-size: 24px;
-        }
-        /* Zona de mensajes */
-        #messages{
-            flex-grow: 1;
-            overflow-y: auto;
-            padding: 15px;
-            margin-bottom: 15px;
-            background: #f5f7fa;
-        }
-        .msg{margin: 8px 0;}
-        .user{text-align: right; color: rgb(166, 198, 188);}
-        .bot{text-align: left;color: green;}
-        input[type="text"]{
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            outline: none;
-        }
+{% extends "base.html" %}
+{% block title %}AdminAgro — Gestión Inteligente de Fincas{% endblock %}
 
-    </style>
-</head>
-<body>
-    <div id="chatbot">
-        <h2>🤖 Chatbot</h2>
-        <div id="messages"></div>
-        <form  id="chatForm">
-           <input type="text" id="userInput" placeholder="Escribe tu mensaje..."
-           autocomplete="off"/>
-        </form>
+{% block content %}
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Administra tu finca con inteligencia</h1>
+    <p>Organiza cultivos, animales, inventario, gastos y labores desde un solo lugar. Con el apoyo de AgriBot, tu asistente virtual agropecuario.</p>
+    <div class="hero-tags">
+      <span class="tag">🌱 Cultivos</span>
+      <span class="tag">🐄 Animales</span>
+      <span class="tag">📦 Inventario</span>
+      <span class="tag">📋 Labores</span>
+      <span class="tag">💰 Gastos</span>
     </div>
-    <script>
-        const form = document.getElementById("chatForm");
-        const input = document.getElementById("userInput");
-        const messages = document.getElementById("messages");
-        form.addEventListener("submit", async (e) => {
-            e.preventDefault();
-            const text = input.value.trim();
-            if(!text) return;
-            messages.innerHTML +=  `<div class="msg user">Tú: ${text}</div>`;
-            input.value="";
-        const response = await fetch("/chat",{
-            method:"POST",
-            headers: {"Content-Type": "application/x-www-form-urlencoded"},
-            body:`message=${encodeURIComponent(text)}`
-        });
-        const data = await response.json();
-        messages.innerHTML += `<div class="msg bot">Bot: ${data.response}</div>`;
-        messages.scrollTop = messages.scrollHeight;
-        });
-    </script>
-</body>
-</html>
+    <a href="#modulos" class="btn">Explorar módulos</a>
+  </div>
+  <div class="hero-icon">🌾</div>
+</section>
+
+<!-- MÓDULOS -->
+<section class="section" id="modulos">
+  <h2>Módulos de gestión</h2>
+  <p class="section-subtitle">Todo lo que necesitas para administrar tu finca de forma ordenada y eficiente.</p>
+
+  <div class="card-container">
+    <div class="card">
+      <div class="card-icon">🌱</div>
+      <h3>Cultivos</h3>
+      <p>Siembra, riego, fertilización, control de plagas y seguimiento de cosechas.</p>
+      <a href="/cultivos">Ver módulo →</a>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🐄</div>
+      <h3>Animales</h3>
+      <p>Alimentación, sanidad, vacunación y seguimiento de producción pecuaria.</p>
+      <a href="/animales">Ver módulo →</a>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">📦</div>
+      <h3>Inventario</h3>
+      <p>Control de insumos, herramientas, medicamentos y bodega de la finca.</p>
+      <a href="/inventario">Ver módulo →</a>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">📋</div>
+      <h3>Labores</h3>
+      <p>Programación de actividades, asignación de tareas y calendario de finca.</p>
+      <a href="/labores">Ver módulo →</a>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">💰</div>
+      <h3>Gastos</h3>
+      <p>Registro de costos, análisis de rentabilidad y control del flujo de caja.</p>
+      <a href="/gastos">Ver módulo →</a>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🤖</div>
+      <h3>AgriBot</h3>
+      <p>Consulta al asistente virtual sobre cualquier tema de tu finca en cualquier momento.</p>
+      <a href="#" onclick="document.getElementById('chat-toggle').click(); return false;">Abrir chat →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section class="section section-alt">
+  <h2>¿Cómo funciona?</h2>
+  <p class="section-subtitle">Tres pasos para tomar el control de tu finca.</p>
+
+  <div class="info-grid">
+    <div class="info-block">
+      <h3>📝 1. Registra</h3>
+      <p>Anota cada actividad, gasto, ingreso y novedad de la finca. Lo que no se registra no se puede mejorar ni controlar.</p>
+    </div>
+    <div class="info-block">
+      <h3>📊 2. Analiza</h3>
+      <p>Revisa los indicadores clave: rendimiento por hectárea, costo por unidad producida y margen de ganancia por actividad.</p>
+    </div>
+    <div class="info-block">
+      <h3>✅ 3. Decide</h3>
+      <p>Con información ordenada, toma decisiones sobre qué sembrar, cuándo invertir, qué mejorar y cómo crecer de forma sostenible.</p>
+    </div>
+  </div>
+
+  <div class="tip-box" style="margin-top:40px">
+    <p>💡 <strong>Consejo:</strong> Usa AgriBot (el botón 🤖 en la esquina) para consultar sobre cultivos, sanidad animal, control de gastos, inventario o cualquier tema de tu finca en cualquier momento.</p>
+  </div>
+</section>
+
+{% endblock %}

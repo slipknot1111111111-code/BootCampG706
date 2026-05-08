@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% block title %}Labores — AdminAgro{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+  <h1>📋 Programación de Labores</h1>
+  <p>Planifica, asigna y controla las actividades diarias y semanales de tu finca.</p>
+</div>
+
+<div class="page-content">
+
+  <h2 style="margin-bottom:8px">¿Por qué programar las labores?</h2>
+  <p class="section-subtitle">La planificación reduce la improvisación y mejora el uso de recursos.</p>
+
+  <div class="info-grid">
+    <div class="info-block">
+      <h3>✅ Beneficios de programar</h3>
+      <ul>
+        <li>Anticipas necesidades de insumos y mano de obra</li>
+        <li>Evitas que las labores urgentes queden sin hacer</li>
+        <li>Reduces costos al organizar las compras</li>
+        <li>Facilitas la supervisión del trabajo</li>
+        <li>Generas registros para análisis posteriores</li>
+      </ul>
+    </div>
+    <div class="info-block">
+      <h3>📅 Tipos de labores</h3>
+      <ul>
+        <li><strong>Diarias:</strong> ordeño, alimentación animal, ronda de revisión</li>
+        <li><strong>Semanales:</strong> revisión de cultivos, mantenimiento de equipos</li>
+        <li><strong>Mensuales:</strong> fertilización, desparasitación, conteo de inventario</li>
+        <li><strong>Estacionales:</strong> siembra, cosecha, vacunaciones</li>
+        <li><strong>Anuales:</strong> análisis de suelo, renovación de cultivos</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- RUTINA DIARIA -->
+  <h2 style="margin: 40px 0 8px">Rutina diaria recomendada</h2>
+  <p class="section-subtitle">Un orden de actividades que maximiza el tiempo en el campo.</p>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Hora aprox.</th>
+          <th>Actividad</th>
+          <th>Responsable</th>
+          <th>Registro</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>5:00 – 7:00</td><td>Ordeño matutino y revisión de terneros</td><td>Ordeñador</td><td>Litros por vaca</td></tr>
+        <tr><td>7:00 – 8:00</td><td>Alimentación de animales estabulados</td><td>Jornalero</td><td>Kg de alimento</td></tr>
+        <tr><td>8:00 – 12:00</td><td>Labores de campo (siembra, fumigación, cosecha)</td><td>Cuadrilla</td><td>Área trabajada</td></tr>
+        <tr><td>12:00 – 13:00</td><td>Descanso y revisión de novedades</td><td>Administrador</td><td>Novedades del día</td></tr>
+        <tr><td>13:00 – 16:00</td><td>Labores de campo / mantenimiento</td><td>Cuadrilla</td><td>Labores ejecutadas</td></tr>
+        <tr><td>16:00 – 17:00</td><td>Segundo ordeño y cierre de animales</td><td>Ordeñador</td><td>Litros por vaca</td></tr>
+        <tr><td>17:00 – 18:00</td><td>Registro del día y planificación del siguiente</td><td>Administrador</td><td>Libro de novedades</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PLAN SEMANAL -->
+  <h2 style="margin: 40px 0 8px">Formato de plan semanal</h2>
+  <p class="section-subtitle">Planifica con anticipación para asegurar recursos y responsables.</p>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Día</th>
+          <th>Labor programada</th>
+          <th>Lote / Área</th>
+          <th>Insumos necesarios</th>
+          <th>Responsable</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Lunes</td><td>Fertilización lote maíz</td><td>Lote A — 2 ha</td><td>80 kg Urea</td><td>Pedro</td><td>✅ Hecho</td></tr>
+        <tr><td>Martes</td><td>Desparasitación bovinos</td><td>Potrero 1</td><td>Ivermectina 200 mL</td><td>Juan</td><td>✅ Hecho</td></tr>
+        <tr><td>Miércoles</td><td>Revisión de plagas plátano</td><td>Lote B — 1,5 ha</td><td>Trampas pegantes</td><td>Carlos</td><td>⏳ Pendiente</td></tr>
+        <tr><td>Jueves</td><td>Mantenimiento bomba de riego</td><td>Bodega</td><td>Filtros de repuesto</td><td>Pedro</td><td>⏳ Pendiente</td></tr>
+        <tr><td>Viernes</td><td>Registro de producción semanal</td><td>Oficina</td><td>Planillas</td><td>Administrador</td><td>⏳ Pendiente</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PRIORIZACIÓN -->
+  <h2 style="margin: 40px 0 8px">Cómo priorizar labores</h2>
+  <div class="info-grid">
+    <div class="info-block">
+      <h3>🔴 Urgente — Hacer hoy</h3>
+      <ul>
+        <li>Animal enfermo o accidentado</li>
+        <li>Plaga activa en punto crítico</li>
+        <li>Parto en curso o complicado</li>
+        <li>Falla en sistema de riego en período crítico</li>
+        <li>Producto cosechado en riesgo de pérdida</li>
+      </ul>
+    </div>
+    <div class="info-block">
+      <h3>🟡 Importante — Esta semana</h3>
+      <ul>
+        <li>Fertilización en fecha del plan</li>
+        <li>Vacunación programada</li>
+        <li>Mantenimiento preventivo de equipos</li>
+        <li>Compra de insumos que se están agotando</li>
+        <li>Registro de producción y gastos</li>
+      </ul>
+    </div>
+    <div class="info-block">
+      <h3>🟢 Puede esperar — Este mes</h3>
+      <ul>
+        <li>Reparaciones menores de infraestructura</li>
+        <li>Limpieza de bodegas y herramientas</li>
+        <li>Análisis de suelo preventivo</li>
+        <li>Capacitación del personal</li>
+        <li>Actualización de registros históricos</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <p>💡 <strong>Consejo:</strong> Cierra cada día anotando las labores ejecutadas, las novedades y lo que quedó pendiente. Esto toma 10 minutos y te ahorra horas de improvisación la semana siguiente. Consulta a AgriBot si necesitas orientación sobre frecuencias o cómo organizar alguna labor específica.</p>
+  </div>
+
+</div>
+{% endblock %}

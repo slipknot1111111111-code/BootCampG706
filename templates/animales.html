@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+{% block title %}Animales — AdminAgro{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+  <h1>🐄 Manejo de Animales</h1>
+  <p>Alimentación, sanidad, vacunación y seguimiento de producción pecuaria en tu finca.</p>
+</div>
+
+<div class="page-content">
+
+  <h2 style="margin-bottom:8px">Especies principales</h2>
+  <p class="section-subtitle">Puntos clave de manejo por tipo de animal.</p>
+
+  <div class="info-grid">
+
+    <div class="info-block">
+      <h3>🐄 Bovinos — Leche</h3>
+      <ul>
+        <li>1 ó 2 ordeños diarios en horario fijo</li>
+        <li>50–70 kg de pasto fresco por vaca/día</li>
+        <li>Suplemento: 0,3 kg concentrado por litro extra sobre 8 L</li>
+        <li>Secar 60 días antes del parto</li>
+        <li>Registrar producción diaria por animal</li>
+      </ul>
+    </div>
+
+    <div class="info-block">
+      <h3>🐂 Bovinos — Carne</h3>
+      <ul>
+        <li>Pastoreo rotacional: mínimo 4–6 potreros</li>
+        <li>Descanso del pasto: 30–45 días</li>
+        <li>0,5–1 ha por animal según calidad del pasto</li>
+        <li>Suplementación mineral permanente en saladero</li>
+        <li>Registrar peso cada 2–3 meses</li>
+      </ul>
+    </div>
+
+    <div class="info-block">
+      <h3>🐷 Porcinos</h3>
+      <ul>
+        <li>2–3 kg de concentrado/día por cerdo de engorde</li>
+        <li>Agua limpia siempre disponible</li>
+        <li>Beneficio a los 90–110 kg (6–7 meses)</li>
+        <li>Conversión alimenticia esperada: 3:1</li>
+        <li>Temperatura galpón: 18–24°C para engorde</li>
+      </ul>
+    </div>
+
+    <div class="info-block">
+      <h3>🐔 Aves — Engorde</h3>
+      <ul>
+        <li>Ciclo: 42–49 días hasta 2,5–3 kg en canal</li>
+        <li>Consumo total: ~4 kg de alimento por pollo</li>
+        <li>Temperatura primera semana: 32–35°C</li>
+        <li>Bajar 2–3°C por semana hasta ambiente</li>
+        <li>Agua limpia siempre junto al alimento</li>
+      </ul>
+    </div>
+
+    <div class="info-block">
+      <h3>🥚 Aves — Postura</h3>
+      <ul>
+        <li>Producción: 280–300 huevos/año por gallina</li>
+        <li>Pico de postura: semanas 28–32</li>
+        <li>Postura eficiente: mayor al 80% diario</li>
+        <li>Reemplaza el lote al año 1,5–2 de postura</li>
+        <li>Registrar huevos producidos y descartados</li>
+      </ul>
+    </div>
+
+    <div class="info-block">
+      <h3>🐑 Ovinos y caprinos</h3>
+      <ul>
+        <li>Pastoreo rotacional o estabulación</li>
+        <li>Gestación: 148–152 días (ovejas), 150 días (cabras)</li>
+        <li>Suplemento mineral en saladero</li>
+        <li>Desparasitar cada 3 meses</li>
+        <li>Registrar partos, crías y producción de leche</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- CALENDARIO SANITARIO -->
+  <h2 style="margin: 40px 0 8px">Calendario sanitario básico</h2>
+  <p class="section-subtitle">Vacunaciones y controles obligatorios o recomendados.</p>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Especie</th>
+          <th>Actividad</th>
+          <th>Frecuencia</th>
+          <th>Observación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Bovinos</td><td>Vacuna Fiebre Aftosa</td><td>Cada 6 meses</td><td>Obligatoria — ICA</td></tr>
+        <tr><td>Bovinos</td><td>Vacuna Brucelosis</td><td>Una sola vez</td><td>Hembras 3–8 meses de edad</td></tr>
+        <tr><td>Bovinos</td><td>Carbón y Edema Maligno</td><td>Anual</td><td>Zonas endémicas</td></tr>
+        <tr><td>Bovinos</td><td>Desparasitación interna</td><td>Cada 3–6 meses</td><td>Alternar principios activos</td></tr>
+        <tr><td>Bovinos</td><td>Control garrapatas</td><td>Cada 14–21 días</td><td>Época alta de infestación</td></tr>
+        <tr><td>Porcinos</td><td>Fiebre Aftosa (si aplica)</td><td>Según zona</td><td>Consultar veterinario</td></tr>
+        <tr><td>Porcinos</td><td>Desparasitación</td><td>Cada 4 meses</td><td>Al ingreso y en reproductoras</td></tr>
+        <tr><td>Aves</td><td>Newcastle (LaSota)</td><td>Días 7, 21 y 35</td><td>Vía ocular o agua</td></tr>
+        <tr><td>Aves</td><td>Gumboro</td><td>Días 14 y 24</td><td>Según historial de la zona</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SEÑALES DE ALERTA -->
+  <h2 style="margin: 40px 0 8px">Señales de alerta sanitaria</h2>
+  <div class="info-grid">
+    <div class="info-block">
+      <h3>🚨 Bovinos</h3>
+      <ul>
+        <li>Falta de apetito por más de un día</li>
+        <li>Temperatura mayor a 39.5°C</li>
+        <li>Diarrea (especialmente en terneros)</li>
+        <li>Baja brusca en producción de leche</li>
+        <li>Leche con coágulos o cambio de color</li>
+      </ul>
+    </div>
+    <div class="info-block">
+      <h3>🚨 Cerdos</h3>
+      <ul>
+        <li>Tos seca y repetitiva</li>
+        <li>Dificultad para respirar</li>
+        <li>Retraso marcado en crecimiento</li>
+        <li>Diarrea persistente</li>
+        <li>Animales separados del grupo</li>
+      </ul>
+    </div>
+    <div class="info-block">
+      <h3>🚨 Aves</h3>
+      <ul>
+        <li>Caída brusca en producción de huevos</li>
+        <li>Plumas erizadas y animal estático</li>
+        <li>Diarrea verdosa o con sangre</li>
+        <li>Dificultad para respirar o tos</li>
+        <li>Alta mortalidad en pocos días</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <p>💡 <strong>Consejo:</strong> Ante cualquier signo de enfermedad, aísla el animal afectado y llama al veterinario. La atención temprana siempre es más económica que el tratamiento tardío. Pregúntale a AgriBot sobre síntomas específicos.</p>
+  </div>
+
+</div>
+{% endblock %}

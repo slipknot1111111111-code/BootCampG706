@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+{% block title %}Inventario — AdminAgro{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+  <h1>📦 Control de Inventario</h1>
+  <p>Gestiona insumos, herramientas, medicamentos y bodega de tu finca de forma ordenada.</p>
+</div>
+
+<div class="page-content">
+
+  <h2 style="margin-bottom:8px">¿Qué inventariar en la finca?</h2>
+  <p class="section-subtitle">Clasifica los elementos para un control más fácil y eficiente.</p>
+
+  <div class="info-grid">
+    <div class="info-block">
+      <h3>🌿 Insumos agrícolas</h3>
+      <ul>
+        <li>Semillas (especie, variedad, fecha de compra)</li>
+        <li>Fertilizantes (nombre, cantidad en kg o kg)</li>
+        <li>Herbicidas, fungicidas e insecticidas</li>
+        <li>Cal agrícola y enmiendas de suelo</li>
+        <li>Abonos orgánicos y bioinsumos</li>
+      </ul>
+    </div>
+    <div class="info-block">
+      <h3>💊 Insumos pecuarios</h3>
+      <ul>
+        <li>Vacunas (nombre, laboratorio, dosis)</li>
+        <li>Antiparasitarios internos y externos</li>
+        <li>Antibióticos y antiinflamatorios</li>
+        <li>Vitaminas y minerales</li>
+        <li>Materiales de curación (jeringas, agujas)</li>
+      </ul>
+    </div>
+    <div class="info-block">
+      <h3>🔧 Herramientas y equipos</h3>
+      <ul>
+        <li>Herramienta manual (machete, azadón, pala)</li>
+        <li>Bomba de fumigación manual y de motor</li>
+        <li>Equipos de ordeño</li>
+        <li>Motosierra, guadañadora</li>
+        <li>Implementos de labranza</li>
+      </ul>
+    </div>
+    <div class="info-block">
+      <h3>🥬 Producción en bodega</h3>
+      <ul>
+        <li>Granos cosechados (tipo, cantidad, fecha)</li>
+        <li>Productos frescos en espera de venta</li>
+        <li>Alimentos para animales (bultos, kg)</li>
+        <li>Combustibles (ACPM, gasolina)</li>
+        <li>Materiales de construcción y mantenimiento</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MODELO DE KARDEX -->
+  <h2 style="margin: 40px 0 8px">Modelo de Kardex para insumos</h2>
+  <p class="section-subtitle">Registra cada movimiento para saber siempre cuánto tienes disponible.</p>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Producto</th>
+          <th>Entrada</th>
+          <th>Salida</th>
+          <th>Saldo</th>
+          <th>Costo unitario</th>
+          <th>Responsable</th>
+          <th>Observación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>01/06/2025</td>
+          <td>Urea 46%</td>
+          <td>100 kg</td>
+          <td>—</td>
+          <td>100 kg</td>
+          <td>$2.200/kg</td>
+          <td>Juan</td>
+          <td>Compra proveedor X</td>
+        </tr>
+        <tr>
+          <td>08/06/2025</td>
+          <td>Urea 46%</td>
+          <td>—</td>
+          <td>40 kg</td>
+          <td>60 kg</td>
+          <td>$2.200/kg</td>
+          <td>Pedro</td>
+          <td>Fertilización lote A</td>
+        </tr>
+        <tr>
+          <td>15/06/2025</td>
+          <td>Ivermectina 1%</td>
+          <td>500 mL</td>
+          <td>—</td>
+          <td>500 mL</td>
+          <td>$35/mL</td>
+          <td>Juan</td>
+          <td>Desparasitación hato</td>
+        </tr>
+        <tr>
+          <td>20/06/2025</td>
+          <td>Ivermectina 1%</td>
+          <td>—</td>
+          <td>120 mL</td>
+          <td>380 mL</td>
+          <td>$35/mL</td>
+          <td>Pedro</td>
+          <td>15 bovinos x 8 mL</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- BUENAS PRÁCTICAS DE ALMACENAMIENTO -->
+  <h2 style="margin: 40px 0 8px">Buenas prácticas de almacenamiento</h2>
+  <div class="info-grid">
+    <div class="info-block">
+      <h3>🧪 Agroquímicos</h3>
+      <ul>
+        <li>Bodega cerrada con llave, ventilada</li>
+        <li>Separados de fertilizantes y alimentos</li>
+        <li>En envase original, bien etiquetado</li>
+        <li>Revisar vencimientos mensualmente</li>
+        <li>Ficha de seguridad visible</li>
+      </ul>
+    </div>
+    <div class="info-block">
+      <h3>🌾 Fertilizantes</h3>
+      <ul>
+        <li>Bodega seca y techada</li>
+        <li>Sobre estibas, sin contacto con el suelo</li>
+        <li>Separados de nitrogenados e inflamables</li>
+        <li>Evitar humedad que apelmace el producto</li>
+        <li>FIFO: primero entrado, primero salido</li>
+      </ul>
+    </div>
+    <div class="info-block">
+      <h3>💉 Medicamentos</h3>
+      <ul>
+        <li>Nevera para vacunas y biológicos</li>
+        <li>Revisar cadena de frío al recibir</li>
+        <li>Registrar tiempo de retiro post-tratamiento</li>
+        <li>Separar de alimentos humanos</li>
+        <li>Desechar vencidos de forma responsable</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <p>💡 <strong>Consejo:</strong> Define un <strong>stock mínimo</strong> para cada insumo crítico (el equivalente a 2 semanas de uso). Cuando llegues a ese nivel, haz el pedido de reposición. Esto evita quedarse sin insumos en momentos críticos como siembra o tratamientos sanitarios.</p>
+  </div>
+
+</div>
+{% endblock %}
